@@ -38,7 +38,7 @@ class Category
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updateAt", type="datetime")
+     * @ORM\Column(name="updatedAt", type="datetime")
      */
     private $updateAt;
 
@@ -102,21 +102,21 @@ class Category
     }
 
     /**
-     * Set updateAt
+     * Set updatedAt
      *
-     * @param \DateTime $updateAt
+     * @param \DateTime $updatedAt
      *
      * @return Category
      */
-    public function setUpdateAt($updateAt)
+    public function setUpdateAt($updatedAt)
     {
-        $this->updateAt = $updateAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Get updateAt
+     * Get updatedAt
      *
      * @return \DateTime
      */

@@ -41,7 +41,7 @@ class ArticleController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/new", name="article_new")
+     * @Route("/articles/new", name="article_new")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -69,7 +69,7 @@ class ArticleController extends Controller
     /**
      * Finds and displays a article entity.
      *
-     * @Route("/{id}", name="article_show")
+     * @Route("/{slug}", name="article_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
@@ -142,17 +142,5 @@ class ArticleController extends Controller
             ->getForm()
             ;
     }
-    /**
-     * Creates a new article entity.
-     *
-     * @Route("/articles/new", name="admin_article_new")
-     * @Method({"GET", "POST"})
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
-     */
-
-    }
-
-
 
 }
