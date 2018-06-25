@@ -41,7 +41,7 @@ class ArticleController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/articles/new", name="article_new")
+     * @Route("/new", name="article_new")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -57,7 +57,7 @@ class ArticleController extends Controller
             $articleManager = $this->get("blog.article_manager.service");
             $articleManager->articleCreate($article);
 
-            return $this->redirectToRoute('article_show', ['slug' => $article->getSlug()]);
+            return $this->redirectToRoute('article_show', ['id' => $article->getId()]);
         }
 
         return $this->render('article/new.html.twig', array(
@@ -69,7 +69,7 @@ class ArticleController extends Controller
     /**
      * Finds and displays a article entity.
      *
-     * @Route("/{slug}", name="article_show")
+     * @Route("/{id}", name="article_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
@@ -124,7 +124,7 @@ class ArticleController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('article_index');
+        return $this->redirectToRoute('article_list');
     }
 
     /**

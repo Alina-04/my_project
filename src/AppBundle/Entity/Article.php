@@ -67,6 +67,17 @@ class Article
      */
     private $content;
 
+    /**
+     * Many Groups have Many Users.
+     * @ManyToMany(targetEntity="User", mappedBy="articles")
+     */
+    private $users;
+
+    /**
+     * Many Groups have Many Users.
+     * @ManyToMany(targetEntity="Category", mappedBy="articles")
+     */
+    private $categories;
 
     /**
      * Get id

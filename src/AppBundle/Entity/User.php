@@ -3,6 +3,10 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
@@ -56,6 +60,19 @@ class User
      */
     private $password;
 
+
+    /**
+     * Many Users have Many Groups.
+     * @ManyToMany(targetEntity="Article", inversedBy="users")
+     * @JoinTable(name="users_articles")
+     */
+    private $articles;
+
+    /**
+     * One Product has Many Features.
+     * @OneToMany(targetEntity="Category", mappedBy="user")
+     */
+    private $categories;
 
     /**
      * Get id

@@ -97,3 +97,8 @@ doctrine:
                 prefix: Gedmo\Translatable\Entity
                 # make sure vendor library location is correct
                 dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+
+#sensio_framework_extra:
+#    request:
+#        converters: true
+#        auto_convert: false
